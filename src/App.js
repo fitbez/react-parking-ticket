@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Ticket from "./Ticket/Ticket";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    clockInTime: " ",
+    clockOutTime: " "
+  };
+  ClockInEventHandler = () => {
+    const timeIn = new Date().toLocaleTimeString();
+    this.setState({
+      clockInTime: timeIn
+    });
+  };
+
+  ClockOutEventHandler = () => {
+    const timeOut = new Date().toLocaleTimeString();
+    this.setState({
+      clockOutTime: timeOut
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Ticket
+          clockOutTime={this.state.clockOutTime}
+          clockInTime={this.state.clockInTime}
+          clickIn={this.ClockInEventHandler}
+          clickOut={this.ClockOutEventHandler}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
