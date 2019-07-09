@@ -10,6 +10,8 @@ class App extends Component {
 
   tickets = [];
   ticketNumber = 0;
+
+  // Event Handler function
   ticketIssueHandler = () => {
     let ticket = this.ticketNumber++;
     this.tickets.push(<TimeStamp ticket={this.ticketNumber - 1} />);
@@ -25,11 +27,8 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <button
-            className="button"
-            onClick={this.ticketIssueHandler.bind(this.ticketNumber)}
-          >
-            Issue Ticket
+          <button className="button" onClick={this.ticketIssueHandler}>
+            <h2>Issue Parking Ticket</h2>
           </button>
         </div>
         <div>{this.state.showComponent}</div>

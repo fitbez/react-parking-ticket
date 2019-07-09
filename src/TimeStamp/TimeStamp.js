@@ -12,7 +12,7 @@ class TimeStamp extends Component {
     const timeIn = new Date().toLocaleTimeString();
     this.setState({
       clockInTime: timeIn,
-      textIn: "Clock In Time: "
+      textIn: <strong>Clock In Time: </strong>
     });
   };
 
@@ -21,7 +21,7 @@ class TimeStamp extends Component {
 
     this.setState({
       clockOutTime: timeOut,
-      textOut: "Clock Out Time: "
+      textOut: <strong>Clock Out Time: </strong>
     });
   };
 
@@ -37,14 +37,18 @@ class TimeStamp extends Component {
           <button className="button" onClick={this.ClockOutEventHandler}>
             Clock Out
           </button>
-          <p>
-            {this.state.textIn}
-            {this.state.clockInTime}
-          </p>
-          <p>
-            {this.state.textOut}
-            {this.state.clockOutTime}
-          </p>
+          <div>
+            <p>
+              {this.state.textIn}
+              {this.state.clockInTime}
+            </p>
+          </div>
+          <div>
+            <p>
+              {this.state.textOut}
+              {this.state.clockOutTime}
+            </p>
+          </div>
         </div>
       </div>
     );
