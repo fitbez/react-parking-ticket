@@ -1,3 +1,11 @@
+.not-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .App {
   text-align: center;
 }
@@ -12,6 +20,7 @@
   color: #ffffff;
   cursor: pointer;
   border-radius: 15px;
+  outline: none;
 }
 
 .card {
