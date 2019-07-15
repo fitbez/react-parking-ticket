@@ -7,12 +7,16 @@
   user-select: none;
 }
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
+.container {
+  display: flex;
+}
+
 .button {
-  /* width: 160px;
-  height: 30px; */
   padding: 16px;
   border: 1px solid #f4f4f4;
   background-color: #009688;
@@ -21,12 +25,33 @@
   cursor: pointer;
   border-radius: 15px;
   outline: none;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
+.cards {
+  display: flex;
+  /* flex-direction: row; */
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.cardDisplay {
+  display: flex;
+  flex-direction: column-reverse;
+}
 .card {
   border: 1px solid #eee;
-  width: 35%;
-  margin: 16px;
+  width: 500px;
+  height: auto;
+  margin: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
+  text-align: center;
+}
+.table {
+  flex: 1;
 }

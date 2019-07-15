@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TimeStamp from "./TimeStamp/TimeStamp";
+import Table from "./Table/Table";
 import "./App.css";
 
 class App extends Component {
@@ -20,18 +21,25 @@ class App extends Component {
       ticketNumber: ticket
     });
     // console.log(this.ticketNumber);
-    console.log(this.tickets.length);
+    // console.log(this.tickets.length);
   };
 
   render() {
     return (
       <div className="App">
-        <div>
+        <div className="issueTicket">
           <button className="button" onClick={this.ticketIssueHandler}>
             <h2>Issue Parking Ticket</h2>
           </button>
         </div>
-        <div>{this.state.showComponent}</div>
+        <div className="container">
+          <div className="cards">
+            <div className="cardDisplay">{this.state.showComponent}</div>
+          </div>
+          <div className="table">
+            <Table />
+          </div>
+        </div>
       </div>
     );
   }
